@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Qual é sua nacionalidade?</h1>
+    <form action="" method="get">
+        <fieldset>
+            <legend>Dados</legend>
+            <div>
+                <label for="inac">O seu país:</label>
+                <input type="text" name="nac" id="inac" autocomplete="country" placeholder="pais" maxlength="30" required> 
+            </div>
+            <input type="button" value="Enviar" onclick="enviar()">
+            <div id="res"><p>Resultado</p></div>
+        </fieldset>
+    </form>
+    <script>
+        function enviar() {
+            var pais = document.querySelector('input#inac')
+            var nac = String(pais.value)
+            var res = document.querySelector('div#res')
+            res.innerHTML = `<p>Se você vive no país <q><strong>${nac}</strong></q></p>`
+            if (nac == 'Brasil') {
+                res.innerHTML += `<p>Você é Brasileiro!</p>`
+            } else {
+                res.innerHTML += `<p>Você é estrangeiro</p>`
+            }
+        }
+    </script>
+</body>
+</html>

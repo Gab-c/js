@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="estilo/style.css">
+   
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    
+<section>
+    <div id="dados">
+            <form action="conta.php" method="post">
+                <fieldset>
+                    <legend>Dados</legend>
+                        <p>Inicio:
+                            <label for="txi"></label>
+                            <input type="number" name="inicio" id="txi" required>
+                        </p>
+                        <p>Fim:
+                            <label for="txf"></label>
+                            <input type="number" name="fim" id="txf" required>
+                        </p>
+                        <p>Passo:
+                            <label for="txp"></label>
+                            <input type="number" name="Passo" id="txp" required>
+                        </p>
+                        <p>
+                            <input type="button" value="Contar" onclick="contar()">
+                        </p>
+                            </div>
+                            <div id="res">
+                               <p>Preparando a contagem...</p>
+                </fieldset>
+                
+            </form>
+         
+    </div>
+</section>
+
+<footer>
+    <p>CursoemVideo</p>
+</footer>
+
+<script src="estilo/script.js"></script>
+</body>
+</html>

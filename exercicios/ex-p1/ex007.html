@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: .9em;
+        }
+
+        #res {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid black;
+            
+        }
+
+        label {
+            font-weight: bolder;
+        }
+
+        input[type=button] {
+            margin-top: 15px;
+            margin-left: 10px;
+            border: 1px solid rgb(91, 94, 93);
+            background-color: rgba(162, 215, 231, 0.37);
+            font-weight: 600;
+            cursor: pointer;
+
+            
+        }
+
+        input {
+            border: 1.5px solid black;
+            padding: 5px;
+        }
+
+        fieldset {
+            padding-bottom: 25px;
+        }
+
+        legend {
+            font-weight: bolder;
+        }
+
+        span { 
+            height: 5px;
+            width: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Faça a soma aqui:</h1>
+        <form action="soma.php">
+            <fieldset>
+                <legend>SOMAR</legend>
+                    <label for="inum1">Número 1:</label>
+                    <input type="number" name="num1" id="inum1" placeholder="primeiro" required><br>
+                    <label for="inum2">Número 2:</label>
+                    <input type="number" name="num2" id="inum2" placeholder="segundo" required>
+                    <input type="button" value="SOMAR" onclick="somar()"> 
+                    <div id="res"><p>Resultado</p></div>
+            </fieldset>
+        </form>
+    <script>
+        function somar() {
+                var nu1 = document.querySelector('input#inum1')
+                var nu2 = document.querySelector('input#inum2')   
+                var n1 = Number(nu1.value)  
+                var n2 = Number(nu2.value)
+                var s = n1 + n2
+                var res = document.querySelector('div#res')
+                res.innerHTML = `<q>A soma do número ${n1} e do número ${n2}, é igual a <strong>${s}</strong>.</q>`
+        }
+    </script>
+</body>
+</html>

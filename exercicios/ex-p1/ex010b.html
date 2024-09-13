@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Qual é sua velocidade?</h1>
+    <form action="" method="get">
+        <fieldset>
+            <legend>Dados</legend>
+            <div>
+                <label for="in1">Sua velocidade:</label>
+                <input type="number" name="n1" id="in1" min="1" max="500" placeholder="velocidade" required>
+            </div>
+            <input type="button" value="Enviar" onclick="calcular()">
+            <div id="res"><p>Resultado</p></div>
+        </fieldset>
+    </form>
+    <script>
+        function calcular() {
+            var n = document.querySelector('input#in1')
+            var vel = Number(n.value)
+            var res = document.querySelector('div#res')
+            res.innerHTML = `<p>Sua velocidade <q><strong>${vel} Km/h.</strong></q></p>`
+            if (vel > 60) {
+                res.innerHTML += `<p>Você está muito rapído!</p>`
+            } else {
+                res.innerHTML += `<p>Dirija com cuidado!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
