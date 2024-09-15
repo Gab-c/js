@@ -38,26 +38,29 @@ function finalizar() {
         window.alert(`Add valores`)  
     } else {
         let total = valor.length
-        let maior = valor[0]
+        let maior = valor[0] 
         let menor = valor[0]
         let soma = 0
         let media = 0
-        for(let pos in valor) {
-            soma += valor[pos]
 
-            if (valor[pos] > maior) 
+        for(let pos in valor) {/* ele vai coletar as caracteristicas
+                                  do elemento do array, ou seja,
+                                  o valor do elemento */
+            soma += valor[pos]  // soma = soma + os valores dos elementos
+
+            if (valor[pos] > maior) // se o valor dos elementos for maior q o valor de "maior"
                 maior = valor[pos]
             
             if (valor[pos] < menor) 
                 menor = valor[pos]
         } 
-        media = soma / total
+        media = soma / 2
         
         res.innerHTML = ''
-        res.innerHTML += `<p>Temos ${total} de números</p>`
+        res.innerHTML += `<p>Temos ${total} valores</p>`
         res.innerHTML += `<p>O maior valor ${maior}</p>`
         res.innerHTML += `<p>O menor valor ${menor}</p>`
-        res.innerHTML += `<p>A soma dos valore ${soma}</p>`
+        res.innerHTML += `<p>A soma dos valores ${soma}</p>`
         res.innerHTML += `<p>A média é ${media}</p>`
     }
 }
