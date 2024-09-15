@@ -5,17 +5,17 @@ function cal() {
     var res = document.querySelector('div#res')
     var fsexo = document.getElementsByName('rsex')
     var idade = anos - Number(fanos.value) 
-    var genero = ''
+
     var img = document.querySelector('div#imagem')
     res.innerHTML = (`Detectamos a idade de ${idade} anos.`)
 
     if (fanos.value.length == 0 || Number(fanos.value) > anos) {
         window.alert('[ERRO] Verifique novamente.')
     } else {
-    
+            var genero = ''
         if (fsexo[0].checked) {
-            genero = 'M'
-
+            genero = 'homem'
+            res.innerHTML = (`Detectamos um <strong>${genero}</strong> com a idade de ${idade} anos.`)
         if (idade >=0 &&  idade < 18){
             // CRIANÇA
              img.innerHTML = "<img src = 'criança-m.png'>"
@@ -27,7 +27,8 @@ function cal() {
                 img.innerHTML = "<img src = 'idoso-m.png'>"
             }
         } else if (fsexo[1].checked) {
-            genero = 'F'
+            genero = 'mulher'
+            res.innerHTML = (`Detectamos um <strong>${genero}</strong> com a idade de ${idade} anos.`)
             if (idade >=0 &&  idade < 18) {
                 // CRIANÇA
                 img.innerHTML = "<img src = 'criança-f.png'>"
